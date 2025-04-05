@@ -1,37 +1,153 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wedding Invitation</title>
+    <title>Свадьба</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Great+Vibes&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
-        <div class="invitation-card">
-            <div class="decoration top-decoration"></div>
-            
-            <h1 class="title">Anna & Michael</h1>
-            <p class="date">August 15, 2025</p>
-            
-            <h2 class="subtitle">Together with their families</h2>
-            <p class="text">request the pleasure of your company as they exchange vows and begin their new life together</p>
-            
-            <p class="venue">The Botanical Gardens</p>
-            <p class="address">123 Blossom Avenue, Rose City</p>
-            <p class="time">Ceremony begins at 4:00 PM</p>
-            
-            <div class="rsvp-section">
-                <p class="rsvp-text">Please RSVP by June 1, 2025</p>
-                <button class="rsvp-button">RSVP</button>
+        <header class="header">
+            <h1>Свадьба</h1>
+            <p class="subtitle">Дорогие и близкие!!! Приглашаем вас на наше СВАДЕБНОЕ ТОРЖЕСТВО</p>
+        </header>
+
+        <section class="couple-photo">
+            <div class="photo-frame">
+                <img src="images/RN.png" alt="Жених и невеста" id="couple-image">
             </div>
-            
-            <div class="decoration bottom-decoration"></div>
-        </div>
+        </section>
+
+        <section class="date-section">
+            <h2>30 июня 2025</h2>
+        </section>
+
+        <section class="calendar-section">
+            <div class="calendar">
+                <div class="calendar-header">Июнь 2025</div>
+                <div class="weekdays">
+                    <div>Пн</div>
+                    <div>Вт</div>
+                    <div>Ср</div>
+                    <div>Чт</div>
+                    <div>Пт</div>
+                    <div>Сб</div>
+                    <div>Вс</div>
+                </div>
+                <div class="days">
+                    <!-- First row (empty cells and days 1-1) -->
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div>1</div>
+                    
+                    <!-- Second row -->
+                    <div>2</div>
+                    <div>3</div>
+                    <div>4</div>
+                    <div>5</div>
+                    <div>6</div>
+                    <div>7</div>
+                    <div>8</div>
+                    
+                    <!-- Third row -->
+                    <div>9</div>
+                    <div>10</div>
+                    <div>11</div>
+                    <div>12</div>
+                    <div>13</div>
+                    <div>14</div>
+                    <div>15</div>
+                    
+                    <!-- Fourth row -->
+                    <div>16</div>
+                    <div>17</div>
+                    <div>18</div>
+                    <div>19</div>
+                    <div>20</div>
+                    <div>21</div>
+                    <div>22</div>
+                    
+                    <!-- Fifth row -->
+                    <div>23</div>
+                    <div>24</div>
+                    <div>25</div>
+                    <div>26</div>
+                    <div>27</div>
+                    <div>28</div>
+                    <div>29</div>
+                    
+                    <!-- Sixth row -->
+                    <div class="wedding-day">30</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="second-photo">
+            <div class="photo-frame">
+                <img src="images/couple2.jpg" alt="Фотография" id="second-image">
+            </div>
+        </section>
+
+        <section class="countdown-section">
+            <h2>До свадьбы осталось</h2>
+            <div class="countdown" id="countdown">
+                <div class="time-unit">
+                    <span id="months">0</span>
+                    <span class="label">месяцев</span>
+                </div>
+                <div class="time-unit">
+                    <span id="weeks">0</span>
+                    <span class="label">недель</span>
+                </div>
+                <div class="time-unit">
+                    <span id="days">0</span>
+                    <span class="label">дней</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="location-section">
+            <h2>Место проведения</h2>
+            <p class="venue-name">Винодельня Nekresi Estate</p>
+            <div class="map-container">
+                <img src="images/map.png" alt="Карта" id="map-image" style="border: none; box-shadow: none;">
+            </div>
+            <a class="route-button" id="route-button" href="https://www.google.com/maps/dir/?api=1&destination=25.276987,55.296249" target="_blank" rel="noopener noreferrer">
+                Проложить маршрут
+            </a>
+        </section>
+
+        <section class="schedule-section">
+            <h2>План мероприятия</h2>
+            <div class="schedule">
+                <div class="schedule-item">
+                    <div class="time">16:00</div>
+                    <div class="event">Сбор гостей</div>
+                </div>
+                <div class="schedule-item">
+                    <div class="time">16:30</div>
+                    <div class="event">Церемония</div>
+                </div>
+                <div class="schedule-item">
+                    <div class="time">17:30</div>
+                    <div class="event">Фуршет</div>
+                </div>
+                <div class="schedule-item">
+                    <div class="time">18:30</div>
+                    <div class="event">Праздничный ужин</div>
+                </div>
+            </div>
+        </section>
     </div>
+
     <script src="script.js"></script>
 </body>
 </html> 
