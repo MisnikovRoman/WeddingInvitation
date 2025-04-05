@@ -92,27 +92,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // Listen for scroll events
     window.addEventListener('scroll', revealSections);
 
-    // ADD TO CALENDAR FUNCTIONALITY
-    /**
-     * Handles the "Add to Calendar" button click
-     * Downloads the wedding_invitation.ics file
-     */
-    document.getElementById('add-to-calendar-button').addEventListener('click', function() {
-        // Download the pre-created ICS file
-        const icsFileUrl = 'wedding_invitation.ics';
-        
-        // Create a link element to download the file
-        const link = document.createElement('a');
-        link.href = icsFileUrl;
-        link.download = 'wedding_invitation.ics';
-        link.style.display = 'none';
-        
-        // Append to the body, click it, and remove it
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-    });
-
     // RSVP FORM FUNCTIONALITY
     /**
      * Handles the RSVP form submission
@@ -150,6 +129,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
             // Don't parse the response as JSON
             // Show success message
+            responseMessage.style.display = 'block';
             responseMessage.textContent = 'Спасибо! Ваш ответ успешно отправлен.';
             responseMessage.className = 'response-message success';
             
