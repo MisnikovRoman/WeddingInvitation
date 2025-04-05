@@ -15,6 +15,11 @@ document.addEventListener('DOMContentLoaded', function() {
             document.getElementById('months').textContent = '0';
             document.getElementById('weeks').textContent = '0';
             document.getElementById('days').textContent = '0';
+
+            // Set default text labels
+            document.querySelector('.time-unit:nth-child(1) .label').textContent = 'месяцев';
+            document.querySelector('.time-unit:nth-child(2) .label').textContent = 'недель';
+            document.querySelector('.time-unit:nth-child(3) .label').textContent = 'дней';
             return;
         }
         
@@ -35,6 +40,40 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('months').textContent = months;
         document.getElementById('weeks').textContent = weeks;
         document.getElementById('days').textContent = finalDays;
+
+         // Function to get correct Russian plural form
+         function getRussianPluralForm(number, forms) {
+            const lastDigit = number % 10;
+            const lastTwoDigits = number % 100;
+            
+            // Special case for 11-19
+            if (lastTwoDigits >= 11 && lastTwoDigits <= 19) {
+                return forms[2];
+            }
+            
+            // 1 (but not 11) - first form
+            if (lastDigit === 1) {
+                return forms[0];
+            }
+            
+            // 2-4 (but not 12-14) - second form
+            if (lastDigit >= 2 && lastDigit <= 4) {
+                return forms[1];
+            }
+            
+            // 0, 5-9, and all other cases - third form
+            return forms[2];
+        }
+
+        // Update text labels with correct plural forms
+        document.querySelector('.time-unit:nth-child(1) .label').textContent = 
+            getRussianPluralForm(months, ['месяц', 'месяца', 'месяцев']);
+        
+        document.querySelector('.time-unit:nth-child(2) .label').textContent = 
+            getRussianPluralForm(weeks, ['неделя', 'недели', 'недель']);
+        
+        document.querySelector('.time-unit:nth-child(3) .label').textContent = 
+            getRussianPluralForm(finalDays, ['день', 'дня', 'дней']);
     }
     
     // Update countdown immediately and then every second
