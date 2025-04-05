@@ -28,49 +28,54 @@ document.addEventListener('DOMContentLoaded', function() {
         const now = new Date().getTime();
         const timeLeft = weddingDate - now;
         
-        // Calculate months, weeks, and days
-        const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+        // If the date has passed
+        if (timeLeft < 0) {
+            document.getElementById('months').textContent = '0';
+            document.getElementById('weeks').textContent = '0';
+            document.getElementById('days').textContent = '0';
+            document.getElementById('hours').textContent = '0';
+            document.getElementById('minutes').textContent = '0';
+            document.getElementById('seconds').textContent = '0';
+            return;
+        }
+        
+        // Calculate time units
+        const second = 1000;
+        const minute = second * 60;
+        const hour = minute * 60;
+        const day = hour * 24;
+        
+        // Calculate months, weeks, days, hours, minutes and seconds
+        const days = Math.floor(timeLeft / day);
         const months = Math.floor(days / 30);
         const remainingDays = days % 30;
         const weeks = Math.floor(remainingDays / 7);
         const finalDays = remainingDays % 7;
         
+        const hours = Math.floor((timeLeft % day) / hour);
+        const minutes = Math.floor((timeLeft % hour) / minute);
+        const seconds = Math.floor((timeLeft % minute) / second);
+        
         // Update the countdown elements
         document.getElementById('months').textContent = months;
         document.getElementById('weeks').textContent = weeks;
         document.getElementById('days').textContent = finalDays;
+        
+        // Update hours, minutes, seconds if these elements exist
+        if (document.getElementById('hours')) {
+            document.getElementById('hours').textContent = hours;
+        }
+        if (document.getElementById('minutes')) {
+            document.getElementById('minutes').textContent = minutes;
+        }
+        if (document.getElementById('seconds')) {
+            document.getElementById('seconds').textContent = seconds;
+        }
     }
     
-    // Update countdown immediately and then every day
+    // Update countdown immediately and then every second
     updateCountdown();
-    setInterval(updateCountdown, 86400000); // Update every 24 hours
-    
-    // Route Button - Open maps with location
-    document.getElementById('route-button').addEventListener('click', function() {
-        // Coordinates for Nekresi Estate (example coordinates - replace with actual)
-        const latitude = 41.9372;
-        const longitude = 45.5359;
-        const locationName = 'Nekresi Estate';
-        
-        // Check if device is iOS or Android
-        const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
-        const isAndroid = /Android/.test(navigator.userAgent);
-        
-        let mapsUrl;
-        
-        if (isIOS) {
-            // Apple Maps
-            mapsUrl = `maps://maps.apple.com/?q=${locationName}&ll=${latitude},${longitude}`;
-        } else if (isAndroid) {
-            // Google Maps
-            mapsUrl = `https://maps.google.com/maps?q=${latitude},${longitude}&z=17&hl=ru`;
-        } else {
-            // Default to Google Maps web
-            mapsUrl = `https://maps.google.com/maps?q=${latitude},${longitude}&z=17&hl=ru`;
-        }
-        
-        window.open(mapsUrl, '_blank');
-    });
+    setInterval(updateCountdown, 1000); // Update every second (1000ms)
     
     // Create placeholder for images if not available
     const images = document.querySelectorAll('img');
