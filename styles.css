@@ -220,6 +220,24 @@ h3 {
  * Mobile optimizations for smaller screens
  */
 @media (max-width: 480px) {
+    /* Font optimizations for mobile */
+    h1 {
+        font-size: 4rem;
+    }
+    
+    h2 {
+        font-size: 2.5rem;
+    }
+    
+    h3 {
+        font-size: 1.5rem;
+    }
+    
+    .subtitle {
+        font-size: 1rem;
+        line-height: 1.4;
+    }
+    
     .countdown {
         gap: 20px;
     }
@@ -230,5 +248,9 @@ h3 {
     
     .schedule-item {
         padding: 15px;
+    }
+    
+    .venue-name {
+        font-size: 1.1rem;
     }
 } 
