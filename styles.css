@@ -183,6 +183,30 @@ h2 {
     background-color: #555;
 }
 
+/* Add to Calendar Button */
+.add-to-calendar-section {
+    margin-bottom: 60px;
+    text-align: center;
+}
+
+.calendar-button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 12px 25px;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    border-radius: 4px;
+}
+
+.calendar-button:hover {
+    background-color: #555;
+}
+
 /* Schedule Section */
 .schedule {
     max-width: 500px;
