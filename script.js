@@ -112,4 +112,61 @@ document.addEventListener('DOMContentLoaded', function() {
         link.click();
         document.body.removeChild(link);
     });
+
+    // RSVP FORM FUNCTIONALITY
+    /**
+     * Handles the RSVP form submission
+     * Sends data to the webhook URL
+     */
+    const rsvpForm = document.getElementById('rsvp-form');
+    const responseMessage = document.getElementById('response-message');
+
+    rsvpForm.addEventListener('submit', function(event) {
+        event.preventDefault();
+        
+        // Get form values
+        const name = document.getElementById('guest-name').value.trim();
+        const answer = document.querySelector('input[name="answer"]:checked').value;
+        const comment = document.getElementById('comment').value.trim();
+        
+        // Prepare data for submission
+        const data = {
+            name: name,
+            answer: answer,
+            comment: comment
+        };
+        
+        // Send data to webhook
+        fetch('https://hook.eu2.make.com/wch2a38ovay1sfiks7dbymjv57rpj1n3', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            // Don't parse the response as JSON
+            // Show success message
+            responseMessage.textContent = 'Спасибо! Ваш ответ успешно отправлен.';
+            responseMessage.className = 'response-message success';
+            
+            // Reset form
+            rsvpForm.reset();
+            
+            // Hide success message after 5 seconds
+            setTimeout(() => {
+                responseMessage.style.display = 'none';
+            }, 5000);
+        })
+        .catch(error => {
+            // Show error message
+            responseMessage.textContent = 'Произошла ошибка при отправке. Пожалуйста, попробуйте еще раз.';
+            responseMessage.className = 'response-message error';
+            
+            console.error('Error:', error);
+        });
+    });
 }); 
