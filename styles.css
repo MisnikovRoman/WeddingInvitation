@@ -1,0 +1,169 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Cormorant Garamond', serif;
+    background-color: #f9f7f5;
+    color: #595959;
+    line-height: 1.6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 500px;
+}
+
+.invitation-card {
+    background-color: #fff;
+    padding: 40px 30px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.decoration {
+    height: 20px;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    background-image: 
+        radial-gradient(circle at 20px 10px, #f9e3de 6px, transparent 8px),
+        radial-gradient(circle at 40px 10px, #f9e3de 6px, transparent 8px),
+        radial-gradient(circle at 60px 10px, #f9e3de 6px, transparent 8px),
+        radial-gradient(circle at 80px 10px, #f9e3de 6px, transparent 8px),
+        radial-gradient(circle at 100px 10px, #f9e3de 6px, transparent 8px),
+        radial-gradient(circle at 120px 10px, #f9e3de 6px, transparent 8px),
+        radial-gradient(circle at 140px 10px, #f9e3de 6px, transparent 8px),
+        radial-gradient(circle at 160px 10px, #f9e3de 6px, transparent 8px),
+        radial-gradient(circle at 180px 10px, #f9e3de 6px, transparent 8px),
+        radial-gradient(circle at 200px 10px, #f9e3de 6px, transparent 8px),
+        radial-gradient(circle at 220px 10px, #f9e3de 6px, transparent 8px),
+        radial-gradient(circle at 240px 10px, #f9e3de 6px, transparent 8px),
+        radial-gradient(circle at 260px 10px, #f9e3de 6px, transparent 8px),
+        radial-gradient(circle at 280px 10px, #f9e3de 6px, transparent 8px),
+        radial-gradient(circle at 300px 10px, #f9e3de 6px, transparent 8px),
+        radial-gradient(circle at 320px 10px, #f9e3de 6px, transparent 8px),
+        radial-gradient(circle at 340px 10px, #f9e3de 6px, transparent 8px),
+        radial-gradient(circle at 360px 10px, #f9e3de 6px, transparent 8px),
+        radial-gradient(circle at 380px 10px, #f9e3de 6px, transparent 8px),
+        radial-gradient(circle at 400px 10px, #f9e3de 6px, transparent 8px),
+        radial-gradient(circle at 420px 10px, #f9e3de 6px, transparent 8px),
+        radial-gradient(circle at 440px 10px, #f9e3de 6px, transparent 8px),
+        radial-gradient(circle at 460px 10px, #f9e3de 6px, transparent 8px),
+        radial-gradient(circle at 480px 10px, #f9e3de 6px, transparent 8px),
+        radial-gradient(circle at 500px 10px, #f9e3de 6px, transparent 8px);
+    background-size: 100% 20px;
+    background-repeat: repeat-x;
+}
+
+.top-decoration {
+    top: 0;
+}
+
+.bottom-decoration {
+    bottom: 0;
+    transform: rotate(180deg);
+}
+
+.title {
+    font-family: 'Great Vibes', cursive;
+    font-size: 3.5rem;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    color: #d4a373;
+    font-weight: 400;
+}
+
+.date {
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+    margin-bottom: 40px;
+    color: #b08968;
+}
+
+.subtitle {
+    font-size: 1.4rem;
+    font-weight: 400;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+}
+
+.text {
+    font-size: 1.1rem;
+    margin-bottom: 40px;
+    padding: 0 10px;
+}
+
+.venue, .address, .time {
+    margin-bottom: 10px;
+}
+
+.venue {
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: #b08968;
+}
+
+.address, .time {
+    font-size: 1.1rem;
+}
+
+.rsvp-section {
+    margin-top: 40px;
+    margin-bottom: 30px;
+}
+
+.rsvp-text {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    font-style: italic;
+}
+
+.rsvp-button {
+    background-color: #d4a373;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+    letter-spacing: 2px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(212, 163, 115, 0.2);
+}
+
+.rsvp-button:hover {
+    background-color: #b08968;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(212, 163, 115, 0.3);
+}
+
+/* Mobile Optimization */
+@media (max-width: 480px) {
+    .invitation-card {
+        padding: 30px 20px;
+    }
+    
+    .title {
+        font-size: 2.8rem;
+    }
+    
+    .subtitle {
+        font-size: 1.2rem;
+    }
+    
+    .text, .venue, .address, .time, .rsvp-text {
+        font-size: 1rem;
+    }
+} 
