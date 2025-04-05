@@ -126,71 +126,18 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Add to Calendar button functionality
     document.getElementById('add-to-calendar-button').addEventListener('click', function() {
-        // Event details
-        const eventTitle = 'Свадьба';
-        const eventDescription = 'Свадебное торжество';
-        const eventLocation = 'Винодельня Nekresi Estate';
-        const startDate = new Date('June 30, 2025 16:00:00');
-        const endDate = new Date('June 30, 2025 23:00:00');
+        // Download the pre-created ICS file
+        const icsFileUrl = 'wedding_invitation.ics';
         
-        // Create iCalendar content
-        const icsContent = createICSFile(eventTitle, eventDescription, eventLocation, startDate, endDate);
+        // Create a link element to download the file
+        const link = document.createElement('a');
+        link.href = icsFileUrl;
+        link.download = 'wedding_invitation.ics';
+        link.style.display = 'none';
         
-        // Create and download the .ics file
-        downloadICS(icsContent, 'wedding_invitation.ics');
+        // Append to the body, click it, and remove it
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
     });
-    
-    // Function to create ICS file content
-    function createICSFile(title, description, location, start, end) {
-        // Format dates for iCalendar
-        function formatDate(date) {
-            return date.toISOString().replace(/-|:|\.\d+/g, '').slice(0, 15) + 'Z';
-        }
-        
-        const now = formatDate(new Date());
-        const startFormatted = formatDate(start);
-        const endFormatted = formatDate(end);
-        
-        // Create iCalendar content
-        return [
-            'BEGIN:VCALENDAR',
-            'VERSION:2.0',
-            'CALSCALE:GREGORIAN',
-            'PRODID:-//Wedding Invitation//RU',
-            'METHOD:PUBLISH',
-            'BEGIN:VEVENT',
-            `UID:${now}-wedding-invitation@nekresi-estate`,
-            `DTSTAMP:${now}`,
-            `DTSTART:${startFormatted}`,
-            `DTEND:${endFormatted}`,
-            `SUMMARY:${title}`,
-            `DESCRIPTION:${description}`,
-            `LOCATION:${location}`,
-            'BEGIN:VALARM',
-            'TRIGGER:-PT1D',
-            'ACTION:DISPLAY',
-            'DESCRIPTION:Reminder',
-            'END:VALARM',
-            'END:VEVENT',
-            'END:VCALENDAR'
-        ].join('\r\n');
-    }
-    
-    // Function to download the ICS file
-    function downloadICS(content, filename) {
-        const blob = new Blob([content], { type: 'text/calendar;charset=utf-8' });
-        
-        if (navigator.msSaveBlob) {
-            // For IE
-            navigator.msSaveBlob(blob, filename);
-        } else {
-            const link = document.createElement('a');
-            link.href = URL.createObjectURL(blob);
-            link.download = filename;
-            link.style.display = 'none';
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-        }
-    }
 }); 
