@@ -55,66 +55,18 @@ h2 {
     color: #555;
 }
 
-/* Photo Sections */
-.photo-frame {
+/* Unified Image Style */
+.image-container {
     width: 100%;
     max-width: 500px;
     margin: 0 auto;
     overflow: hidden;
 }
 
-.photo-frame img {
+.image-container img {
     width: 100%;
     height: auto;
     display: block;
-}
-
-/* Calendar Section */
-.calendar {
-    max-width: 400px;
-    margin: 0 auto;
-    border: 1px solid #eee;
-    background-color: #fff;
-}
-
-.calendar-header {
-    background-color: #f5f5f5;
-    padding: 15px;
-    font-size: 1.2rem;
-    font-weight: 500;
-    letter-spacing: 2px;
-}
-
-.weekdays {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    text-align: center;
-    border-bottom: 1px solid #eee;
-    padding: 10px 0;
-    font-size: 0.9rem;
-    font-weight: 500;
-}
-
-.days {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    grid-gap: 8px;
-    padding: 15px;
-}
-
-.days div {
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.9rem;
-}
-
-.wedding-day {
-    background-color: #333;
-    color: #fff;
-    border-radius: 50%;
-    font-weight: 500;
 }
 
 /* Countdown Section */
@@ -150,19 +102,6 @@ h2 {
     font-size: 1.2rem;
     margin-bottom: 15px;
     color: #555;
-}
-
-.map-container {
-    max-width: 500px;
-    height: 300px;
-    margin: 20px auto;
-    overflow: hidden;
-}
-
-.map-container img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
 }
 
 .route-button {
