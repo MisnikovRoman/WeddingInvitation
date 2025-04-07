@@ -38,7 +38,7 @@ body {
 }
 
 header, section {
-    margin-bottom: 80px;
+    margin-bottom: 20px;
     text-align: center;
 }
 
@@ -48,23 +48,23 @@ header, section {
  */
 h1 {
     font-family: 'Alistair Signature', cursive;
-    font-size: 5rem;
+    font-size: 3.5rem;
     font-weight: normal;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     letter-spacing: 2px;
 }
 
 h2 {
     font-family: 'Alistair Signature', cursive;
-    font-size: 3rem;
+    font-size: 2.5rem;
     font-weight: normal;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     letter-spacing: 1px;
 }
 
 h3 {
     font-family: 'Alistair Signature', cursive;
-    font-size: 2rem;
+    font-size: 1.8rem;
     font-weight: normal;
     margin-bottom: 20px;
     letter-spacing: 1px;
@@ -105,7 +105,8 @@ h3 {
     display: flex;
     justify-content: center;
     gap: 40px;
-    margin-top: 30px;
+    margin-top: 0px;
+    margin-bottom: 30px;
 }
 
 .time-unit {
@@ -132,12 +133,12 @@ h3 {
  * LOCATION SECTION
  * Styles for venue information and map
  */
-.venue-name {
-    font-size: 1.2rem;
+.route-button {
+    font-size: 1.8rem;
     margin-bottom: 15px;
-    color: #555;
 }
 
+/*
 .route-button {
     background-color: #333;
     color: #fff;
@@ -151,6 +152,7 @@ h3 {
     text-transform: uppercase;
     margin-top: 20px;
 }
+*/
 
 .route-button:hover {
     background-color: #555;
@@ -174,7 +176,7 @@ h3 {
     letter-spacing: 1px;
     cursor: pointer;
     transition: all 0.3s ease;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Inter', sans-serif;
     text-transform: uppercase;
     border-radius: 4px;
 }
@@ -198,6 +200,7 @@ h3 {
     display: flex;
     padding: 20px;
     border-bottom: 1px solid #eee;
+    font-size: 1.4rem;
 }
 
 .schedule-item:last-child {
@@ -205,8 +208,8 @@ h3 {
 }
 
 .time {
-    width: 100px;
-    font-weight: 500;
+    width: 70px;
+    font-weight: 600;
     color: #333;
 }
 
@@ -216,12 +219,29 @@ h3 {
 }
 
 /* 
+ * PAYMENT SECTION
+ * Styles for the payment section
+ */
+.payment-section {
+    text-align: left;
+    line-height: 1.0;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+/* 
  * RSVP FORM SECTION
  * Styles for the RSVP form
  */
 .rsvp-section {
     max-width: 500px;
     margin: 0 auto 80px;
+}
+
+.rsvp-text {
+    font-size: 2.2rem;
+    line-height: 1.2;
+    margin-bottom: 20px;
 }
 
 .rsvp-form {
@@ -318,19 +338,7 @@ h3 {
  * Mobile optimizations for smaller screens
  */
 @media (max-width: 480px) {
-    /* Font optimizations for mobile */
-    h1 {
-        font-size: 4rem;
-    }
-    
-    h2 {
-        font-size: 2.5rem;
-    }
-    
-    h3 {
-        font-size: 1.5rem;
-    }
-    
+
     .subtitle {
         font-size: 1rem;
         line-height: 1.4;
@@ -347,8 +355,13 @@ h3 {
     .schedule-item {
         padding: 15px;
     }
-    
-    .venue-name {
-        font-size: 1.1rem;
-    }
 } 
+
+/* The switch - the box around the slider */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+  }
+  
